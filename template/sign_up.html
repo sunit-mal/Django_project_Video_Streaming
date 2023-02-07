@@ -1,0 +1,47 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{% static '/media/logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static '/css/sign_up.css' %}">
+    <title>Sign Up</title>
+</head>
+
+<body>
+    <div class="container col-sm-10">
+        <h1 class="my-5 mx-5 signup">Sign Up</h1>
+        {% if messages %}
+        {% for message in messages %}
+        <p {% if message.tags %} class="alert alert-{{message.tags}} mb-5" {% endif %}>{{message}}</p>
+        {% endfor %}
+        {% endif %}
+        <form method="POST">
+            {% csrf_token %}
+            {% for fm in form %}
+            <div class="form-group my-2">
+                <b>{{fm.label_tag}}</b> {{fm}} {{fm.errors|striptags}}
+            </div>
+            {% endfor %}
+            <div class="container text-center">
+                <input type="submit" class="btn btn-primary my-2" value="Register">
+            </div>
+            {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+            <p class="alert alert-danger my-3">{{error}}</p>
+            {% endfor %}
+            {% endif %}
+        </form>
+        <div class="login">
+            <a href="/login/" id="Login">Already a User? Login</a>
+        </div>
+        <div class="home">
+            <a href="/home/" id="home">&#9751</a>
+        </div>
+    </div>
+    <script src="{% static '/css/sign_up.js' %}"></script>
+</body>
+
+</html>
