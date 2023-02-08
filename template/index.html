@@ -42,15 +42,15 @@
                             <a class="nav-link login" href="/admin/">Admin</a>
                         </li>
                         <li class="nav-item dropdown">
-                            
+
                             {% if request.user.is_authenticated %}
-                            
-                            
+
+
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            {{user.get_full_name}}
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
+                                aria-expanded="false">
+                                {{user.get_full_name}}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
                                 <li><a class="dropdown-item" id="loginout" href="/logout/">Logout</a></li>
                             </ul>
 
@@ -71,7 +71,7 @@
 
                         </li>
                     </ul>
-                    <form class="d-flex mt-3" role="search" method="GET">
+                    <form class="d-flex mt-3" action="search" method="GET">
 
                         <input class="form-control me-2" placeholder="Search" aria-label="Search" id="searchItem"
                             name="search">

@@ -12,7 +12,7 @@ def goodbye(request):
         return render(request, 'GoodByeMovie.html')
     else:
         return HttpResponseRedirect('/login/')
-
+ 
 def charlie(request):
     if request.user.is_authenticated:
         return render(request, 'Charlie.html')
@@ -44,10 +44,27 @@ def about(request):
     return render(request, 'about.html')
 
 def search(request):
-    if request == 'GET':
-        name = request.GET.get('search')
-        return HttpResponse(name)
-    
+    if request != 'GET':
+        name = request.GET['search']
+        name = name.upper()
+        if (name == '777' or name == 'CHARLIE'):
+            return HttpResponseRedirect('/Charlie/')
+
+        elif (name == 'CHUP'):
+            return HttpResponseRedirect('/chup/')
+
+        elif (name == 'FREDDY'):
+            return HttpResponseRedirect('/freddy/')
+
+        elif (name == 'GHOST STORY'or name == 'GHOSTSTORY'):
+            return HttpResponseRedirect('/ghostStory/')
+
+        elif (name == 'GOODBYE'or name == 'GOOD BYE'):
+            return HttpResponseRedirect('/GoodByeMovie/')
+
+        else:
+            return HttpResponseRedirect('/')
+
 def uesr_signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
