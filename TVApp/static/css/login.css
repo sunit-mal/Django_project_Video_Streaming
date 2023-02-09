@@ -205,26 +205,6 @@ form input[type="submit"]:hover {
   text-align: center;
   margin-top: 3%;
 }
-#home {
-  text-decoration: none;
-  color: #000000;
-  font-weight: bold;
-  /* background-color: black; */
-  padding: 1px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 8px;
-  font-size: 40px;
-}
-
-.home {
-  position: relative;
-  text-align: right;
-  margin-top: 3%;
-  top:-425px;
-  left: 25%;
-}
-
 .alert-danger{
   width: 503px;
 }
