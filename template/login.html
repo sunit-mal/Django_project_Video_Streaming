@@ -1,0 +1,50 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'CSS/login.css' %}" type="text/css">
+    <link rel="shortcut icon" href="{% static 'media/logo.png' %}" type="image/x-icon">
+    {% comment %} <link rel="stylesheet" href="{% static 'css/home_icon.css' %}"> {% endcomment %}
+    <title>Login</title>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <div class="half">
+        <div class="contents order-2 order-md-1">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-7">
+                        <h3>Login to <strong>Your Tv</strong></h3>
+                        <p class="mb-4">Welcome User</p>
+                        <form action="/login/" method="post" autocomplete="off">
+                            {% csrf_token %}
+                            <div class="form-group first">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" placeholder="Your Username" id="username"
+                                    name="username">
+                            </div>
+                            <div class="form-group last mb-3">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" placeholder="Your Password" id="password"
+                                    name="password">
+                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-block btn-primary">Continue </button><br>
+                            <a href="/signup/" style="position: relative;text-decoration: none;color: #000000;">Not a user ? Create account .</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg order-1 order-md-2">
+            <img src="{% static 'media/img/bg_11.jpg' %}" alt="" srcset="">
+        </div> 
+    </div>
+</body>
+</html>

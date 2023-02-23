@@ -1,0 +1,115 @@
+<!doctype html>
+{%load static%}
+<html lang="en">
+
+<head>
+    <title>Sign Up</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{% static '/media/logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'CSS/sign_up.css' %}">
+</head>
+
+<body>
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    <div class="wrap d-md-flex">
+                        <div class="text-wrap p-4 p-lg-5 d-flex img d-flex align-items-end">
+                            <div class="text w-100">
+                                <h2 class="mb-4">Your Tv</h2>
+                                <p>Far far away, behind the word mountains, far from the countries Vokalia and
+                                    Consonantia, there live the blind texts.</p>
+                            </div>
+                        </div>
+                        <div class="login-wrap p-4 p-md-5">
+                            <h2>Sign up</h2>
+                            <h3 class="mb-3">Create an account</h3>
+                            <form action="/signup/" class="signup-form" method="post" autocomplete="off">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group d-flex align-items-center">
+                                            <label class="label" for="first name">First Name</label>
+                                            <input type="text" class="form-control" placeholder="First Name"
+                                                name="fname">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group d-flex align-items-center">
+                                            <label class="label" for="last name">Last Name</label>
+                                            <input type="text" class="form-control" placeholder="Last Name"
+                                                name="lname">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group d-flex align-items-center">
+                                            <label class="label" for="email">Email Address</label>
+                                            <input type="text" class="form-control" placeholder="example@email.com"
+                                                name="email">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group d-flex align-items-center">
+                                            <label class="label" for="username">Username</label>
+                                            <input type="text" class="form-control" placeholder="Username" name="uname">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group d-flex align-items-center">
+                                            <label class="label" for="phone">Password</label>
+                                            <input type="password" class="form-control" placeholder="Password"
+                                                name="pass1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group d-flex align-items-center">
+                                            <label class="label" for="password">Confirm Password</label>
+                                            <input type="password" class="form-control"
+                                                placeholder="Enter Password again" name="pass2">
+                                        </div>
+                                        {% if messages %}
+                                            {% for message in messages  %}
+                                                <span class = "alertmassage" style="font-size: 10px;color: red;">
+                                                    {{message}}
+                                                </span>
+                                            {% endfor %}
+                                        {% else %}
+                                            <span class = "alertmassage" style="font-size: 10px;color: red;">
+                                                &nbsp
+                                            </span>
+                                        {% endif %}
+                                    </div>
+
+                                    <div class="col-md-12 my-4">
+                                        <div class="form-group">
+                                            <div class="w-100">
+
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn btn-secondary submit p-3">Create an account</button>
+                                                    <a href="/login/" style="position: relative;left: 10%;text-decoration: none;color: #000000;">Already a user? Login.</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                            </form>
+                            <div class="social-wrap">
+                                <p class="or">
+                                    <span>&nbsp</span>
+                                </p>
+                
+                            </div>
+                            <div class="w-100 text-center">
+                                <p class="mt-4">&nbsp</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

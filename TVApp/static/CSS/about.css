@@ -1,0 +1,37 @@
+.body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: aliceblue;
+    background-color: black;
+    opacity: .8;
+    overflow-x: hidden;
+}
+h3{
+    padding-top: 1%;
+    padding-left: 2%;
+    font-size: 32px;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+}
+.col-xs-12{
+    margin: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+}
+h4{
+    font-size: 23px;
+    font-style: italic;
+    
+}
+#txt{
+    color: #d91a5d;
+    font-family: cursive;
+    font-weight: bold;
+    font-style: italic;
+}
+a{
+    font-family: cursive;
+    font-weight: bold;
+    font-style: italic; 
+}

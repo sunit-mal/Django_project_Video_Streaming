@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freddy</title>
+    <link rel="stylesheet" href="{% static '/css/aos.css' %}">
+    <link rel="stylesheet" href="{% static '/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static '/css/freddy.css' %}">
+    <link rel="shortcut icon" href="{% static '/media/logo (Custom).png' %}" type="image/x-icon">
+</head>
+
+<body class="body" id="body">
+    <nav class="navbar bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" id="txt">
+                <img src="{% static '/media/logo (Custom).png' %}" alt="Logo" width="30" height="24"
+                    class="d-inline-block align-text-top">
+                Your Tv
+            </a>
+            <a href="/" class="navbar-brand">
+                Home
+            </a>
+        </div>
+    </nav>
+    <div>
+        <video src="{% static '/media/Movies/freedy.mp4' %}" controls="autoplay" id="video"></video>
+    </div>
+    <div id="movie">
+        Freddy Hindi WEB-DL 720p & 480p HD | Watch Online on YourTv :
+
+        <hr>
+
+        Introverted and awkward Dr Freddy Ginwala desperately searches for a soulmate. When he finally finds her, the
+        relationship becomes as painful as a root canal.
+    </div>
+    <div class="secondMovie" data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine">
+        <a href="/GoodByeMovie/">
+            <img src="{% static '/media/MovieImage/Goodbye.jpg' %}" alt="" class="movie" style="width: 270px;" data-aos-offset="200">
+        </a>
+    </div>
+    <div class="ThirdMovie" data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine">
+        <a href="/chup/">
+            <img src="{% static '/media/MovieImage/chup.jpg' %}" alt="" class="movie" style="width: 270px;" data-aos-offset="200">
+        </a>
+    </div>
+    <div id="more">
+        <a href="/">More :</a>
+
+    </div>
+</body>
+
+<script src="{% static '/js/bootstrap.js' %}"></script>
+<script src="{% static '/js/aos.js' %}"></script>
+<script>
+    AOS.init();
+</script>
+<script src="{% static '/js/script.js' %}"></script>
+
+</html>

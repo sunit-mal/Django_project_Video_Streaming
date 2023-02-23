@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Tv</title>
+    <link rel="stylesheet" href="{% static '/CSS/style.css' %}">
+    <link rel="stylesheet" href="{% static '/CSS/aos.css' %}">
+    <link rel="stylesheet" href="{% static '/CSS/bootstrap.css' %}">
+    <link rel="shortcut icon" href="{% static '/media/logo (Custom).png' %}" type="image/x-icon">
+</head>
+
+<body class="body" id="body">
+    <nav class="navbar navbar-dark bg-dark fixed-top" id="nav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" id="heading">
+                <img src="{% static '/media/logo (Custom).png' %}" alt="" id="Logo"> Your TV
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Your Tv</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link login" href="/about/">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link login" href="/admin/">Admin</a>
+                        </li>
+                        <li class="nav-item dropdown">
+
+                            {% if request.user.is_authenticated %}
+
+
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                {{user.get_username}}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" id="loginout" href="/logout/">Logout</a></li>
+                            </ul>
+
+                            {% else %}
+
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                User
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+
+
+
+                                <li><a class="dropdown-item" id="loginbtn" href="/login/">Login</a></li>
+                                <li><a class="dropdown-item" id="signupbtn" href="/signup/">Sign Up</a></li>
+
+                                {% endif %}
+
+                        </li>
+                    </ul>
+                    <form class="d-flex mt-3" action="search" method="GET">
+
+                        <input class="form-control me-2" placeholder="Search" aria-label="Search" id="searchItem"
+                            name="search">
+                        <button class="btn btn-success" type="submit">Search</button>
+                    </form>
+                    <!-- <button id="btn">enter</button> -->
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="pagebg" id="page1">
+        <div class="slider-frame">
+            <div class="slide-images">
+                <div class="img-container">
+                    <img src="{% static '/media/img2.jpeg' %}" class="slideImage">
+                </div>
+                <div class="img-container">
+                    <img src="{% static '/media/img.jpeg' %}" class="slideImage">
+                </div>
+                <div class="img-container">
+                    <img src="{% static '/media/img3.jpeg' %}" class="slideImage">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pagebg" id="page2">
+        <div class="secondMovieList" data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine">
+            <img src="{% static '/media/MovieImage/physics wallah.jpg' %}" alt="" class="movie" style="width: 270px;"
+                data-aos-offset="200">
+        </div>
+        <div class=" secondMovieList" data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine">
+            <img src="{% static '/media/MovieImage/crushed.jpg' %}" alt="" class="movie" style="width: 270px;"
+                data-aos-offset="200">
+        </div>
+        <div class=" secondMovieList" data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine">
+            <img src="{% static '/media/MovieImage/spiderman.jpg' %}" alt="" class="movie" style="width: 270px;"
+                data-aos-offset="200">
+        </div>
+        <div class=" secondMovieList" data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine">
+            <a href="/Charlie/">
+                <img src="{% static '/media/MovieImage/777.jpg' %}" alt="" class="movie" style="width: 270px;"
+                    data-aos-offset="200">
+            </a>
+        </div>
+    </div>
+    <div class="pagebg" id="page3">
+        <div class="secondMovieList" data-aos="fade-right" data-aos-offset="250" data-aos-easing="ease-in-sine">
+            <img src="{% static '/media/MovieImage/Aa.jpg' %}" alt="" class="movie" style="width: 270px;"
+                data-aos-offset="250">
+        </div>
+        <div class=" secondMovieList" data-aos="fade-right" data-aos-offset="250" data-aos-easing="ease-in-sine">
+            <a href="/freddy/">
+                <img src="{% static '/media/MovieImage/freddy.jpg' %}" alt="" class="movie" style="width: 270px;"
+                    data-aos-offset="250">
+            </a>
+        </div>
+        <div class=" secondMovieList" data-aos="fade-right" data-aos-offset="250" data-aos-easing="ease-in-sine">
+            <img src="{% static '/media/MovieImage/BlackAdam.jpg' %}" alt="" class="movie" style="width: 270px;"
+                data-aos-offset="250">
+        </div>
+        <div class=" secondMovieList" data-aos="fade-right" data-aos-offset="250" data-aos-easing="ease-in-sine">
+            <img src="{% static '/media/MovieImage/Radhe-Shyam.jpg' %}" alt="" class="movie" style="width: 270px;"
+                data-aos-offset="250">
+        </div>
+    </div>
+    <div class="pagebg" id="page4">
+        <div class="secondMovieList" data-aos="fade-left" data-aos-offset="250" data-aos-easing="ease-in-sine">
+            <img src="{% static '/media/MovieImage/batman.jpg' %}" alt="" class="movie" style="width: 270px;"
+                data-aos-offset="250">
+        </div>
+        <div class=" secondMovieList" data-aos="fade-left" data-aos-offset="250" data-aos-easing="ease-in-sine">
+            <img src="{% static '/media/MovieImage/cirkus.jpg' %}" alt="" class="movie" style="width: 270px;"
+                data-aos-offset="250">
+        </div>
+        <div class=" secondMovieList" data-aos="fade-left" data-aos-offset="250" data-aos-easing="ease-in-sine">
+            <img src="{% static '/media/MovieImage/Fantastic Beasts.jpg' %}" alt="" class="movie" style="width: 270px;"
+                data-aos-offset="250">
+        </div>
+        <div class=" secondMovieList" data-aos="fade-left" data-aos-offset="250" data-aos-easing="ease-in-sine">
+            <img src="{% static '/media/MovieImage/bhai Jaan.jpg' %}" alt="" class="movie" style="width: 270px;"
+                data-aos-offset="250">
+        </div>
+    </div>
+    <div class="pagebg" id="page5">
+        <div class="secondMovieList" data-aos="fade-right" data-aos-offset="250" data-aos-easing="ease-in-sine">
+            <img src="{% static '/media/MovieImage/avatar.png' %}" alt="" class="movie" style="width: 270px;"
+                data-aos-offset="250">
+        </div>
+        <div class=" secondMovieList" data-aos="fade-right" data-aos-offset="250" data-aos-easing="ease-in-sine">
+            <img src="{% static '/media/MovieImage/ganapath.jpg' %}" alt="" class="movie" style="width: 270px;"
+                data-aos-offset="250">
+        </div>
+        <div class=" secondMovieList" data-aos="fade-right" data-aos-offset="250" data-aos-easing="ease-in-sine">
+            <img src="{% static '/media/MovieImage/Kashmir.jpg' %}" alt="" class="movie" style="width: 270px;"
+                data-aos-offset="250">
+        </div>
+        <div class=" secondMovieList" data-aos="fade-right" data-aos-offset="250" data-aos-easing="ease-in-sine">
+            <img src="{% static '/media/MovieImage/brahmastra.jpg' %}" alt="" class="movie" style="width: 270px;"
+                data-aos-offset="250">
+        </div>
+    </div>
+    <div class="pagebg" id="page6">
+        <div class="secondMovieList" data-aos="fade-left" data-aos-offset="250" data-aos-easing="ease-in-sine">
+            <img src="{% static '/media/MovieImage/thanks god.jpg' %}" alt="" class="movie" style="width: 270px;"
+                data-aos-offset="250">
+        </div>
+        <div class=" secondMovieList" data-aos="fade-left" data-aos-offset="250" data-aos-easing="ease-in-sine">
+            <a href="/GoodByeMovie/">
+                <img src="{% static '/media/MovieImage/Goodbye.jpg' %}" alt="" class="movie" style="width: 270px;"
+                    data-aos-offset="250">
+            </a>
+        </div>
+        <div class=" secondMovieList" data-aos="fade-left" data-aos-offset="250" data-aos-easing="ease-in-sine">
+            <a href="/ghostStory/">
+                <img src="{% static '/media/MovieImage/Ghost-Stories-movie-download.png' %}" alt="" class="movie"
+                    style="width: 270px;" data-aos-offset="250">
+            </a>
+        </div>
+        <div class=" secondMovieList" data-aos="fade-left" data-aos-offset="250" data-aos-easing="ease-in-sine">
+            <img src="{% static '/media/MovieImage/daman.png' %}" alt="" class="movie" style="width: 270px;"
+                data-aos-offset="250">
+        </div>
+    </div>
+    <div class="pagebg" id="page7">
+        <div class="secondMovieList" data-aos="fade-right" data-aos-offset="250" data-aos-easing="ease-in-sine">
+            <img src="{% static '/media/MovieImage/thankyou.png' %}" alt="" class="movie" style="width: 270px;"
+                data-aos-offset="250">
+        </div>
+        <div class=" secondMovieList" data-aos="fade-right" data-aos-offset="250" data-aos-easing="ease-in-sine">
+            <img src="{% static '/media/MovieImage/1945-movie.png' %}" alt="" class="movie" style="width: 270px;"
+                data-aos-offset="250">
+        </div>
+        <div class=" secondMovieList" data-aos="fade-right" data-aos-offset="250" data-aos-easing="ease-in-sine">
+            <a href="/chup/">
+                <img src="{% static '/media/MovieImage/chup.jpg' %}" alt="" class="movie" style="width: 270px;"
+                    data-aos-offset="250">
+            </a>
+        </div>
+        <div class=" secondMovieList" data-aos="fade-right" data-aos-offset="250" data-aos-easing="ease-in-sine">
+            <img src="{% static '/media/MovieImage/black-panther.png' %}" alt="" class="movie" style="width: 270px;"
+                data-aos-offset="250">
+        </div>
+    </div>
+    <div class="pagebg" id="page8">
+        <div class="secondMovieList" data-aos="fade-left" data-aos-offset="250" data-aos-easing="ease-in-sine">
+            <img src="{% static '/media/MovieImage/ishqExpress.png' %}" alt="" class="movie" style="width: 270px;"
+                data-aos-offset="250">
+        </div>
+        <div class=" secondMovieList" data-aos="fade-left" data-aos-offset="250" data-aos-easing="ease-in-sine">
+            <img src="{% static '/media/MovieImage/Trust_Issues_1672913036.png' %}" alt="" class="movie"
+                style="width: 270px;" data-aos-offset="250">
+        </div>
+        <div class=" secondMovieList" data-aos="fade-left" data-aos-offset="250" data-aos-easing="ease-in-sine">
+            <img src="{% static '/media/MovieImage/Hostel-Daze-Season-3-poster.png' %}" alt="" class="movie"
+                style="width: 270px;" data-aos-offset="250">
+        </div>
+        <div class=" secondMovieList" data-aos="fade-left" data-aos-offset="250" data-aos-easing="ease-in-sine">
+            <img src="{% static '/media/MovieImage/sixer.png' %}" alt="" class="movie" style="width: 270px;"
+                data-aos-offset="250">
+        </div>
+    </div>
+
+    <div class="footer" id="footer"">
+        <p class=" footertxt">
+        Your Tv&nbsp;<img src="{% static '/media/Young_Janta_ko_yahi_mangta.png' %}" alt="" class="footerImg">
+        </p>
+        <!-- <img src="{% static '/media/MovieImage/myQr.png' %}" alt="" id="qr"> -->
+        <img id="icons" src="{% static '/media/Screenshot 2023-01-18 180850.png' %}" alt="">
+        <footer class="blockquote-footer">
+            <p id="copyright" style="padding-right: 5%;padding-top: 3%;text-align: right;color: #969899af;">Copyright ©
+                Team Incognito. All rights reserved.</p>
+            <p class="foot1">Platform: Windows 11</p>
+            <p class="foot2">Browser: Chrome 109.0.5414.75</p>
+            <p class="foot3">Sessionld_ 262-9690760-9474254 / A30TPdJ04QLFMC</p>
+        </footer>
+    </div>
+</body>
+
+<script src="{% static '/js/bootstrap.js' %}"></script>
+<script src="{% static '/js/aos.js' %}"></script>
+<script>
+    AOS.init();
+</script>
+<script src="{% static '/js/script.js' %}"></script>
+<script src="{% static '/js/BackToTab.js' %}"></script>
+
+</html>
